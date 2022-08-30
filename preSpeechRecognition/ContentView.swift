@@ -72,9 +72,6 @@ struct ContentView: View {
                         // TODO:
                         // ref: https://swift-ios.keicode.com/ios/speechrecognition-live.php
                         
-                        
-                        
-                        
                         // 許可の状態に応じて UI を更新する
                         OperationQueue.main.addOperation {
                             switch authStatus {
@@ -145,7 +142,16 @@ extension ContentView {
                     return
                 }
                 DispatchQueue.main.async {
-                    speachText = result?.bestTranscription.formattedString ?? "<<< Fail to transcription >>>"
+                    if !speachText.isEmpty {}
+                    
+                    // NOTE: formattedStringは翻訳文をひとまとめにして返却する（単語ごとに分かれてはいない）
+                    // speachText = result?.bestTranscription.formattedString ?? "<<< Fail to transcription >>>"
+                    
+                    // NOTE: 単語ごとに分かれて対応したい場合、segmentを使う
+                    speachText = result?.bestTranscription.segments
+                        .map { $0.substring }
+                        .joined(separator: "\n") ?? "<<< Fail to transcription >>>"
+                        
                 }
             }
         )
