@@ -46,10 +46,10 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .foregroundColor(button01Color)
                 }
-            ).alert(isPresented: $isShowAlert, content: {
+            ).alert(isPresented: $isShowAlert) {
                 isShowAlert = false
                 return cannotLiveTranscriptionAlert
-            })
+            }
             Spacer()
                 .frame(height: 50)
             Button(
