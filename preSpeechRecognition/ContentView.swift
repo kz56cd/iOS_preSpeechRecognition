@@ -16,6 +16,7 @@ struct ContentView: View {
     @State var button01Color: Color = .blue
     @State var button02Text = "stop"
     @State var button02Color: Color = .blue
+    @State var isShowAlert = false
 
     @State var speachText = "-"
     
@@ -34,13 +35,21 @@ struct ContentView: View {
                 action: {
                     button01Text = "recording..."
                     button01Color = .red
+                    do {
+                        try? startLiveTranscription()
+                    } catch {
+                        isShowAlert = true
+                    }
                 },
                 label: {
                     Text(button01Text)
                         .font(.largeTitle)
                         .foregroundColor(button01Color)
                 }
-            )
+            ).alert(isPresented: $isShowAlert, content: {
+                isShowAlert = false
+                return cannotLiveTranscriptionAlert
+            })
             Spacer()
                 .frame(height: 50)
             Button(
@@ -146,6 +155,14 @@ extension ContentView {
         audioEngine.stop()
         audioEngine.inputNode.removeTap(onBus: 0)
         recognitionReq?.endAudio()
+    }
+    
+    private var cannotLiveTranscriptionAlert: Alert {
+        Alert(
+            title: Text("音声認識を開始できませんでした"),
+            message: Text("やり直してください"),
+            dismissButton: .cancel()
+        )
     }
 }
 
