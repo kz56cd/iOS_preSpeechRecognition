@@ -11,20 +11,21 @@ import AVFoundation
 
 struct ContentView: View {
     
-    @State var button01Text = "record"
-    @State var isEnabledButton01 = true
-    @State var button01Color: Color = .blue
-    @State var button02Text = "stop"
-    @State var button02Color: Color = .blue
-    @State var isShowAlert = false
+    @State private var button01Text = "record"
+    @State private var isEnabledButton01 = true
+    @State private var button01Color: Color = .blue
+    @State private var button02Text = "stop"
+    @State private var button02Color: Color = .blue
+    @State private var isShowAlert = false
 
-    @State var speachText = "-"
+    /// 音声認識により文字起こししたテキスト
+    @State private var speachText = "-"
     
     // MARK: - for Speech
-    let speechRecgnizer = SFSpeechRecognizer(locale: .init(identifier: "ja_JP"))!
-    let audioEngine = AVAudioEngine()
-    @State var recognitionReq: SFSpeechAudioBufferRecognitionRequest?
-    @State var recognitionTask: SFSpeechRecognitionTask?
+    private let speechRecgnizer = SFSpeechRecognizer(locale: .init(identifier: "ja_JP"))!
+    private let audioEngine = AVAudioEngine()
+    @State private var recognitionReq: SFSpeechAudioBufferRecognitionRequest?
+    @State private var recognitionTask: SFSpeechRecognitionTask?
     
     var body: some View {
         VStack {
@@ -36,7 +37,7 @@ struct ContentView: View {
                     button01Text = "recording..."
                     button01Color = .red
                     do {
-                        try? startLiveTranscription()
+                        try startLiveTranscription()
                     } catch {
                         isShowAlert = true
                     }
@@ -102,6 +103,7 @@ struct ContentView: View {
     }
 }
     
+// MARK: - private
 extension ContentView {
     private func startLiveTranscription() throws {
         // 前回の音声認識タスクが実行中ならキャンセルする
@@ -151,7 +153,6 @@ extension ContentView {
                     speachText = result?.bestTranscription.segments
                         .map { $0.substring }
                         .joined(separator: "\n") ?? "<<< Fail to transcription >>>"
-                        
                 }
             }
         )
@@ -172,6 +173,7 @@ extension ContentView {
     }
 }
 
+// MARK: - PreviewProvider
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
