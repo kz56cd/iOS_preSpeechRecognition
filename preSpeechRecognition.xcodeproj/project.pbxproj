@@ -13,6 +13,7 @@
 		EA0724E32893BE640013719B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA0724E22893BE640013719B /* Preview Assets.xcassets */; };
 		EA0724EE2893BE640013719B /* preSpeechRecognitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0724ED2893BE640013719B /* preSpeechRecognitionTests.swift */; };
 		EA0724F92893BE640013719B /* preSpeechRecognitionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0724F82893BE640013719B /* preSpeechRecognitionUITests.swift */; };
+		EA716EFF28C2F2EC00393BA0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EA716EFE28C2F2EC00393BA0 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		EA0724F42893BE640013719B /* preSpeechRecognitionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = preSpeechRecognitionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0724F82893BE640013719B /* preSpeechRecognitionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preSpeechRecognitionUITests.swift; sourceTree = "<group>"; };
 		EA0724FA2893BE640013719B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA716EFE28C2F2EC00393BA0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 		EA0724CF2893BE600013719B = {
 			isa = PBXGroup;
 			children = (
+				EA716EFE28C2F2EC00393BA0 /* README.md */,
 				EA0724DA2893BE610013719B /* preSpeechRecognition */,
 				EA0724EC2893BE640013719B /* preSpeechRecognitionTests */,
 				EA0724F72893BE640013719B /* preSpeechRecognitionUITests */,
@@ -233,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA716EFF28C2F2EC00393BA0 /* README.md in Resources */,
 				EA0724E32893BE640013719B /* Preview Assets.xcassets in Resources */,
 				EA0724E02893BE640013719B /* Assets.xcassets in Resources */,
 			);
