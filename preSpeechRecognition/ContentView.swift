@@ -32,6 +32,8 @@ struct ContentView: View {
             Spacer()
             Text(speachText)
             Spacer()
+            
+            // 録音スタートボタン
             Button(
                 action: {
                     button01Text = "recording..."
@@ -53,6 +55,8 @@ struct ContentView: View {
             }
             Spacer()
                 .frame(height: 50)
+            
+            // 録音ストップボタン
             Button(
                 action: {
                     button01Text = "record"
@@ -67,38 +71,7 @@ struct ContentView: View {
             )
         }
         .onAppear {
-            SFSpeechRecognizer.requestAuthorization { authStatus in
-                DispatchQueue.main.async {
-                    if authStatus != SFSpeechRecognizerAuthorizationStatus.authorized {
-                        // TODO:
-                        // ref: https://swift-ios.keicode.com/ios/speechrecognition-live.php
-                        
-                        // 許可の状態に応じて UI を更新する
-                        OperationQueue.main.addOperation {
-                            switch authStatus {
-                            case .authorized:
-                                print("authorized")
-                                // 「発話してください」アラートを出すなどの処理
-                                isEnabledButton01 = true
-                                return
-                            case .denied:
-                                print("denied")
-                                // 拒否された時の処理
-                            case .restricted:
-                                print("denied")
-                                // 制限を知らせるアラートを出すなどの処理
-                            case .notDetermined:
-                                print("notDetermined")
-                                // 許可を求めるアラートを出すなどの処理
-                            default:
-                                break
-                            }
-                            isEnabledButton01 = false
-                            
-                        }
-                    }
-                }
-            }
+            SFSpeechRecognizer.requestAuthorization { authorizeSpeechRecognizer(with: $0) }
         }
     }
 }
@@ -170,6 +143,35 @@ extension ContentView {
             message: Text("やり直してください"),
             dismissButton: .cancel()
         )
+    }
+    
+    private func authorizeSpeechRecognizer(with status: SFSpeechRecognizerAuthorizationStatus) {
+        guard status != SFSpeechRecognizerAuthorizationStatus.authorized else { return }
+        // TODO:
+        // ref: https://swift-ios.keicode.com/ios/speechrecognition-live.php
+        
+        // 許可の状態に応じて UI を更新する
+        OperationQueue.main.addOperation {
+            switch status {
+            case .authorized:
+                print("authorized")
+                // 「発話してください」アラートを出すなどの処理
+                isEnabledButton01 = true
+                return
+            case .denied:
+                print("denied")
+                // 拒否された時の処理
+            case .restricted:
+                print("denied")
+                // 制限を知らせるアラートを出すなどの処理
+            case .notDetermined:
+                print("notDetermined")
+                // 許可を求めるアラートを出すなどの処理
+            default:
+                break
+            }
+            isEnabledButton01 = false
+        }
     }
 }
 
