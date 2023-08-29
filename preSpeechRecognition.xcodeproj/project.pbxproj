@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EA0724DC2893BE610013719B /* preSpeechRecognitionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0724DB2893BE610013719B /* preSpeechRecognitionApp.swift */; };
-		EA0724DE2893BE610013719B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0724DD2893BE610013719B /* ContentView.swift */; };
-		EA0724E02893BE640013719B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA0724DF2893BE640013719B /* Assets.xcassets */; };
 		EA0724E32893BE640013719B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA0724E22893BE640013719B /* Preview Assets.xcassets */; };
 		EA0724EE2893BE640013719B /* preSpeechRecognitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0724ED2893BE640013719B /* preSpeechRecognitionTests.swift */; };
 		EA0724F92893BE640013719B /* preSpeechRecognitionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0724F82893BE640013719B /* preSpeechRecognitionUITests.swift */; };
 		EA716EFF28C2F2EC00393BA0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EA716EFE28C2F2EC00393BA0 /* README.md */; };
+		EA9A36432A9DFFA9005D1E0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA9A363E2A9DFFA9005D1E0C /* Assets.xcassets */; };
+		EA9A36442A9DFFA9005D1E0C /* preSpeechRecognitionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A363F2A9DFFA9005D1E0C /* preSpeechRecognitionApp.swift */; };
+		EA9A36452A9DFFA9005D1E0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A36402A9DFFA9005D1E0C /* AppDelegate.swift */; };
+		EA9A36462A9DFFA9005D1E0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A36412A9DFFA9005D1E0C /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +36,7 @@
 
 /* Begin PBXFileReference section */
 		EA0724D82893BE610013719B /* preSpeechRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = preSpeechRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA0724DB2893BE610013719B /* preSpeechRecognitionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preSpeechRecognitionApp.swift; sourceTree = "<group>"; };
-		EA0724DD2893BE610013719B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		EA0724DF2893BE640013719B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA0724E22893BE640013719B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EA0724E42893BE640013719B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA0724E92893BE640013719B /* preSpeechRecognitionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = preSpeechRecognitionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0724ED2893BE640013719B /* preSpeechRecognitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preSpeechRecognitionTests.swift; sourceTree = "<group>"; };
 		EA0724EF2893BE640013719B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +44,11 @@
 		EA0724F82893BE640013719B /* preSpeechRecognitionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preSpeechRecognitionUITests.swift; sourceTree = "<group>"; };
 		EA0724FA2893BE640013719B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA716EFE28C2F2EC00393BA0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EA9A363E2A9DFFA9005D1E0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA9A363F2A9DFFA9005D1E0C /* preSpeechRecognitionApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = preSpeechRecognitionApp.swift; sourceTree = "<group>"; };
+		EA9A36402A9DFFA9005D1E0C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EA9A36412A9DFFA9005D1E0C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EA9A36422A9DFFA9005D1E0C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +100,7 @@
 		EA0724DA2893BE610013719B /* preSpeechRecognition */ = {
 			isa = PBXGroup;
 			children = (
-				EA0724DB2893BE610013719B /* preSpeechRecognitionApp.swift */,
-				EA0724DD2893BE610013719B /* ContentView.swift */,
-				EA0724DF2893BE640013719B /* Assets.xcassets */,
-				EA0724E42893BE640013719B /* Info.plist */,
+				EA9A363D2A9DFFA9005D1E0C /* App */,
 				EA0724E12893BE640013719B /* Preview Content */,
 			);
 			path = preSpeechRecognition;
@@ -131,6 +130,18 @@
 				EA0724FA2893BE640013719B /* Info.plist */,
 			);
 			path = preSpeechRecognitionUITests;
+			sourceTree = "<group>";
+		};
+		EA9A363D2A9DFFA9005D1E0C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EA9A363E2A9DFFA9005D1E0C /* Assets.xcassets */,
+				EA9A363F2A9DFFA9005D1E0C /* preSpeechRecognitionApp.swift */,
+				EA9A36402A9DFFA9005D1E0C /* AppDelegate.swift */,
+				EA9A36412A9DFFA9005D1E0C /* ContentView.swift */,
+				EA9A36422A9DFFA9005D1E0C /* Info.plist */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +249,7 @@
 			files = (
 				EA716EFF28C2F2EC00393BA0 /* README.md in Resources */,
 				EA0724E32893BE640013719B /* Preview Assets.xcassets in Resources */,
-				EA0724E02893BE640013719B /* Assets.xcassets in Resources */,
+				EA9A36432A9DFFA9005D1E0C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,8 +274,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA0724DE2893BE610013719B /* ContentView.swift in Sources */,
-				EA0724DC2893BE610013719B /* preSpeechRecognitionApp.swift in Sources */,
+				EA9A36442A9DFFA9005D1E0C /* preSpeechRecognitionApp.swift in Sources */,
+				EA9A36462A9DFFA9005D1E0C /* ContentView.swift in Sources */,
+				EA9A36452A9DFFA9005D1E0C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +437,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"preSpeechRecognition/Preview Content\"";
 				DEVELOPMENT_TEAM = 3ZMTZ3U33V;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = preSpeechRecognition/Info.plist;
+				INFOPLIST_FILE = preSpeechRecognition/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -447,7 +459,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"preSpeechRecognition/Preview Content\"";
 				DEVELOPMENT_TEAM = 3ZMTZ3U33V;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = preSpeechRecognition/Info.plist;
+				INFOPLIST_FILE = preSpeechRecognition/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
