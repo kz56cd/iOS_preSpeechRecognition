@@ -28,57 +28,55 @@ struct ContentView: View {
     @State private var recognitionTask: SFSpeechRecognitionTask?
     
     var body: some View {
-        VStack(spacing: 50) {
+        VStack {
             Spacer()
             Text(speachText)
             Spacer()
             
-            Button {
-                print("hoge")
-            } label: {
-                Text("(sandbox)")
-                    .font(.largeTitle)
-                    .foregroundColor(button01Color)
-            }
-            
-            Spacer()
-            
-            // 録音スタートボタン
-            Button(
-                action: {
-                    button01Text = "recording..."
-                    button01Color = .red
-                    do {
-                        try startLiveTranscription()
-                    } catch {
-                        isShowAlert = true
-                    }
-                },
-                label: {
-                    Text(button01Text)
+            VStack(spacing: 14) {
+                Button {
+                    print("hoge")
+                } label: {
+                    Text("(sandbox)")
                         .font(.largeTitle)
                         .foregroundColor(button01Color)
                 }
-            ).alert(isPresented: $isShowAlert) {
-                isShowAlert = false
-                return cannotLiveTranscriptionAlert
-            }
-            
-            Spacer()
-            
-            // 録音ストップボタン
-            Button(
-                action: {
-                    button01Text = "record"
-                    button01Color = .blue
-                    self.stopLiveTranscription()
-                },
-                label: {
-                    Text(button02Text)
-                        .font(.largeTitle)
-                        .foregroundColor(button02Color)
+                
+                // 録音スタートボタン
+                Button(
+                    action: {
+                        button01Text = "recording..."
+                        button01Color = .red
+                        do {
+                            try startLiveTranscription()
+                        } catch {
+                            isShowAlert = true
+                        }
+                    },
+                    label: {
+                        Text(button01Text)
+                            .font(.largeTitle)
+                            .foregroundColor(button01Color)
+                    }
+                ).alert(isPresented: $isShowAlert) {
+                    isShowAlert = false
+                    return cannotLiveTranscriptionAlert
                 }
-            )
+                
+                // 録音ストップボタン
+                Button(
+                    action: {
+                        button01Text = "record"
+                        button01Color = .blue
+                        self.stopLiveTranscription()
+                    },
+                    label: {
+                        Text(button02Text)
+                            .font(.largeTitle)
+                            .foregroundColor(button02Color)
+                    }
+                )
+            }
         }
         .onAppear {
             SFSpeechRecognizer.requestAuthorization { authorizeSpeechRecognizer(with: $0) }
