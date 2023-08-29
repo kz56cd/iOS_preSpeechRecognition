@@ -28,9 +28,19 @@ struct ContentView: View {
     @State private var recognitionTask: SFSpeechRecognitionTask?
     
     var body: some View {
-        VStack {
+        VStack(spacing: 50) {
             Spacer()
             Text(speachText)
+            Spacer()
+            
+            Button {
+                print("hoge")
+            } label: {
+                Text("(sandbox)")
+                    .font(.largeTitle)
+                    .foregroundColor(button01Color)
+            }
+            
             Spacer()
             
             // 録音スタートボタン
@@ -53,8 +63,8 @@ struct ContentView: View {
                 isShowAlert = false
                 return cannotLiveTranscriptionAlert
             }
+            
             Spacer()
-                .frame(height: 50)
             
             // 録音ストップボタン
             Button(
