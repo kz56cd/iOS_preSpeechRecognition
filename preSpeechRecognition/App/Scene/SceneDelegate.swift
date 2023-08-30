@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         withDependencies: { _ in } // Add mock data (if needed)
     )
     
+    private var homeCoordinator: HomeCoordinator?
     private var cancellables: Set<AnyCancellable> = []
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -31,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         setupHomeTransition()
         
         // TODO:
-        // store.send(.willConnect)
+         store.send(.willConnect)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -65,50 +66,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 private extension SceneDelegate {
     func setupHomeTransition() {
-        // TODO: implement with TCA.
-//        store.scope(state: \.home, action: SceneReducer.Action.home)
-//            .ifLet(
-//                then: { [weak self] homeStore in
-//                    guard let self = self else {
-//                        return
-//                    }
-//
-//                    let coordinator = HomeCoordinator(store: homeStore)
-//                    self.window?.rootViewController = coordinator.rootViewController
-//                    self.window?.makeKeyAndVisible()
-//                    coordinator.start()
-//                    self.homeCoordinator = coordinator
-//                },
-//                else: { [weak self] () in
-//                    self?.homeCoordinator = nil
-//                }
-//            )
-//            .store(in: &cancellables)
-        
-        let navigationController = UINavigationController()
-        window?.rootViewController = navigationController
-        
-        // relation: 'coordinator.start()'
-        navigationController.isNavigationBarHidden = true
-        
-        // enable swipe back
-//        navigationController.interactivePopGestureRecognizer?.delegate = popGestureManager
-        navigationController.interactivePopGestureRecognizer?.isEnabled = true
-        
-        // relation: 'makeGeneralView()'
-        // TODO: homeCoordinator化のstateをscopeして取得すること
-        let general = CustomHostingController(
-            rootView: GeneralView(
-                store: .init(
-                    initialState: General.State(),
-                    reducer: {
-                        General()
+        store.scope(state: \.home, action: SceneReducer.Action.home)
+            .ifLet(
+                then: { [weak self] homeStore in
+                    guard let self = self else {
+                        return
                     }
-                )
+
+                    let coordinator = HomeCoordinator(store: homeStore)
+                    self.window?.rootViewController = coordinator.rootViewController
+                    self.window?.makeKeyAndVisible()
+                    coordinator.start()
+                    self.homeCoordinator = coordinator
+                },
+                else: { [weak self] () in
+                    self?.homeCoordinator = nil
+                }
             )
-        )
-        navigationController.pushViewController(general, animated: false)
-        
-        window?.makeKeyAndVisible()
+            .store(in: &cancellables)
     }
 }

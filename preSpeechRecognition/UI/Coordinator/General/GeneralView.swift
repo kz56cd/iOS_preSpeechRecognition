@@ -40,7 +40,7 @@ struct GeneralView: View {
                 
                 VStack(spacing: 14) {
                     Button {
-                        print("hoge")
+                        viewStore.send(.sandboxTapped)
                     } label: {
                         Text("(sandbox)")
                             .font(.largeTitle)

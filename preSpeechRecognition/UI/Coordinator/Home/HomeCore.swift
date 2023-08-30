@@ -13,11 +13,16 @@ import ComposableArchitecture
 struct HomeCoordinatorReducer: Reducer {
 
     struct State: Equatable {
-//        var general: Dashboard.State = .init()
+        var general: General.State = .init()
+        
+        var sandbox: Sandbox.State?
     }
     
     enum Action {
-        // case dashboard(Dashboard.Action)
+        case general(General.Action)
+        case sandbox(Sandbox.Action)
+        
+        case showSandbox
     }
     
     var body: some Reducer<State, Action> {
@@ -25,14 +30,30 @@ struct HomeCoordinatorReducer: Reducer {
             // handling transition actions
             switch action {
                 // WIP
+            case .general(.sandboxTapped):
+                return .send(.showSandbox)
+                
+            case .sandbox(_):
+                return .none
+                
+            case .showSandbox:
+                state.sandbox = Sandbox.State()
+                
+                print("fuga")
+                
+                return .none
+                
+            default:
+                return .none
+                
             }
         }
-//        .ifLet(\.employeeDetail, action: /Action.employeeDetail) {
-//            EmployeeDetail()
-//        }
+        .ifLet(\.sandbox, action: /Action.sandbox) {
+            Sandbox()
+        }
         
-//        Scope(state: \.dashboard, action: /Action.dashboard) {
-//            Dashboard()
-//        }
+        Scope(state: \.general, action: /Action.general) {
+            General()
+        }
     }
 }

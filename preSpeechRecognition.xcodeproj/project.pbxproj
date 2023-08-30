@@ -24,6 +24,8 @@
 		EA9A36612A9E3996005D1E0C /* HomeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A36602A9E3996005D1E0C /* HomeCore.swift */; };
 		EA9A36642A9EC27E005D1E0C /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A36632A9EC27E005D1E0C /* GeneralView.swift */; };
 		EA9A36662A9EC305005D1E0C /* GeneralCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A36652A9EC305005D1E0C /* GeneralCore.swift */; };
+		EA9A36692A9ED50E005D1E0C /* SandboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A36682A9ED50E005D1E0C /* SandboxView.swift */; };
+		EA9A366B2A9ED5DC005D1E0C /* SandboxCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A366A2A9ED5DC005D1E0C /* SandboxCore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		EA9A36602A9E3996005D1E0C /* HomeCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCore.swift; sourceTree = "<group>"; };
 		EA9A36632A9EC27E005D1E0C /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		EA9A36652A9EC305005D1E0C /* GeneralCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCore.swift; sourceTree = "<group>"; };
+		EA9A36682A9ED50E005D1E0C /* SandboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxView.swift; sourceTree = "<group>"; };
+		EA9A366A2A9ED5DC005D1E0C /* SandboxCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandboxCore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +207,7 @@
 			children = (
 				EA9A365F2A9E3985005D1E0C /* Home */,
 				EA9A36622A9EC270005D1E0C /* General */,
+				EA9A36672A9ED4FD005D1E0C /* Sandbox */,
 				EA9A365B2A9E37EA005D1E0C /* HomeCoordinator.swift */,
 				EA9A365D2A9E3886005D1E0C /* Coordinator.swift */,
 			);
@@ -224,6 +229,15 @@
 				EA9A36652A9EC305005D1E0C /* GeneralCore.swift */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		EA9A36672A9ED4FD005D1E0C /* Sandbox */ = {
+			isa = PBXGroup;
+			children = (
+				EA9A36682A9ED50E005D1E0C /* SandboxView.swift */,
+				EA9A366A2A9ED5DC005D1E0C /* SandboxCore.swift */,
+			);
+			path = Sandbox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA9A366B2A9ED5DC005D1E0C /* SandboxCore.swift in Sources */,
 				EA9A365E2A9E3886005D1E0C /* Coordinator.swift in Sources */,
 				EA9A36542A9E35B3005D1E0C /* CustomHostingController.swift in Sources */,
 				EA9A36662A9EC305005D1E0C /* GeneralCore.swift in Sources */,
@@ -373,6 +388,7 @@
 				EA9A36452A9DFFA9005D1E0C /* AppDelegate.swift in Sources */,
 				EA9A365C2A9E37EA005D1E0C /* HomeCoordinator.swift in Sources */,
 				EA9A364B2A9E03DC005D1E0C /* SceneDelegate.swift in Sources */,
+				EA9A36692A9ED50E005D1E0C /* SandboxView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -34,24 +34,78 @@ final class HomeCoordinator: NSObject, NavigationCoordinator {
         navigationController.interactivePopGestureRecognizer?.delegate = popGestureManager
         navigationController.interactivePopGestureRecognizer?.isEnabled = true
         
-//        navigationController.pushViewController(makeGeneralView(), animated: false)
+        // Add root view
+        navigationController.pushViewController(makeGeneralView(), animated: false)
         
-        // TODO: Add some transition (like this)
-        
-        // When `employeeDetail` is set in State, transition to `EmployeeDetailView`
-//        setupTransition(
-//            state: \.employeeDetail,
-//            action: HomeCoordinatorReducer.Action.employeeDetail,
-//            childViewInitializer: EmployeeDetailView.init(store: ),
-//            didPopFromNavigation: { [weak self] () in
-//                self?.store.send(.didPopFromNavigation(.employeeDetail))
-//            }
-//        )
+        // Add some transition
+        setupTransition(
+            state: \.sandbox,
+            action: HomeCoordinatorReducer.Action.sandbox,
+            childViewInitializer: SandboxView.init(store: ),
+            didPopFromNavigation: { [weak self] () in
+                // TODO:
+            }
+        )
     }
 }
 
-extension HomeCoordinator {
-//    func makeGeneralView() -> UIViewController {
-//        return CustomHostingController(rootView: GeneralView())
-//    }
+// MARK: - private
+private extension HomeCoordinator {
+    func makeGeneralView() -> UIViewController {
+        let view = GeneralView(
+            store: store.scope(
+                state: \.general,
+                action: HomeCoordinatorReducer.Action.general
+            )
+        )
+        
+        return CustomHostingController(rootView: view)
+    }
+    
+    // Logic for transition when state (existence of child states) changes in HomeCoordinatorReducer.
+    //
+    // When the child state becomes non-null in state (by some logic in reducer), make view, make hostingVC, then push to navigationController.
+    // When the child state becomes null, pop the view from navigation controller.
+    // (Basically, syncing the state between HomeCoordinatorReducer.State ane navigation stack)
+    // Reference: https://github.com/pointfreeco/swift-composable-architecture/blob/main/Examples/CaseStudies/UIKitCaseStudies/LoadThenNavigate.swift#L100-L113
+    func setupTransition<ChildState, ChildAction, ChildView: View>(
+        state toChildState: @escaping (HomeCoordinatorReducer.State) -> ChildState?,
+        action fromChildAction: @escaping (ChildAction) -> HomeCoordinatorReducer.Action,
+        childViewInitializer: @escaping (Store<ChildState, ChildAction>) -> ChildView,
+        didPopFromNavigation: @escaping () -> ()
+    ) {
+        store
+            .scope(state: toChildState, action: fromChildAction) // observe child state existence change
+            .ifLet(
+                then: { [weak self] childStore in
+                    // When the child state becomes non-null in state, make view, make hostingVC, then push to navigationController.
+                    
+                    guard let self = self else {
+                        return
+                    }
+                    
+                    let view = childViewInitializer(childStore)
+                    
+                    let vc = CustomHostingController(
+                        rootView: view,
+                        didPopFromNavigation: { () in
+                            didPopFromNavigation()
+                        }
+                    )
+                    self.navigationController.pushViewController(vc, animated: true)
+                },
+                else: { [weak self] () in
+                    // When the child state becomes null, pop the view from navigation controller.
+                    guard let self = self else {
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        if self.navigationController.viewControllers.last is UIHostingController<ChildView> {
+                            self.navigationController.popViewController(animated: true)
+                        }
+                    }
+                }
+            )
+            .store(in: &cancellables)
+    }
 }
