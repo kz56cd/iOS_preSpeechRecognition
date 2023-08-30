@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,10 +12,18 @@
 		EA0724F92893BE640013719B /* preSpeechRecognitionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0724F82893BE640013719B /* preSpeechRecognitionUITests.swift */; };
 		EA716EFF28C2F2EC00393BA0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EA716EFE28C2F2EC00393BA0 /* README.md */; };
 		EA9A36432A9DFFA9005D1E0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA9A363E2A9DFFA9005D1E0C /* Assets.xcassets */; };
-		EA9A36442A9DFFA9005D1E0C /* preSpeechRecognitionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A363F2A9DFFA9005D1E0C /* preSpeechRecognitionApp.swift */; };
 		EA9A36452A9DFFA9005D1E0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A36402A9DFFA9005D1E0C /* AppDelegate.swift */; };
 		EA9A36462A9DFFA9005D1E0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A36412A9DFFA9005D1E0C /* ContentView.swift */; };
 		EA9A364B2A9E03DC005D1E0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A364A2A9E03DC005D1E0C /* SceneDelegate.swift */; };
+		EA9A36512A9E3584005D1E0C /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = EA9A364F2A9E3583005D1E0C /* .gitkeep */; };
+		EA9A36542A9E35B3005D1E0C /* CustomHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A36532A9E35B3005D1E0C /* CustomHostingController.swift */; };
+		EA9A36572A9E3678005D1E0C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = EA9A36562A9E3678005D1E0C /* ComposableArchitecture */; };
+		EA9A36592A9E36F4005D1E0C /* SceneCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A36582A9E36F4005D1E0C /* SceneCore.swift */; };
+		EA9A365C2A9E37EA005D1E0C /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A365B2A9E37EA005D1E0C /* HomeCoordinator.swift */; };
+		EA9A365E2A9E3886005D1E0C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A365D2A9E3886005D1E0C /* Coordinator.swift */; };
+		EA9A36612A9E3996005D1E0C /* HomeCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A36602A9E3996005D1E0C /* HomeCore.swift */; };
+		EA9A36642A9EC27E005D1E0C /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A36632A9EC27E005D1E0C /* GeneralView.swift */; };
+		EA9A36662A9EC305005D1E0C /* GeneralCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A36652A9EC305005D1E0C /* GeneralCore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +54,18 @@
 		EA0724FA2893BE640013719B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA716EFE28C2F2EC00393BA0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EA9A363E2A9DFFA9005D1E0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EA9A363F2A9DFFA9005D1E0C /* preSpeechRecognitionApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = preSpeechRecognitionApp.swift; sourceTree = "<group>"; };
 		EA9A36402A9DFFA9005D1E0C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA9A36412A9DFFA9005D1E0C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EA9A36422A9DFFA9005D1E0C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA9A364A2A9E03DC005D1E0C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EA9A364F2A9E3583005D1E0C /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		EA9A36532A9E35B3005D1E0C /* CustomHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHostingController.swift; sourceTree = "<group>"; };
+		EA9A36582A9E36F4005D1E0C /* SceneCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCore.swift; sourceTree = "<group>"; };
+		EA9A365B2A9E37EA005D1E0C /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		EA9A365D2A9E3886005D1E0C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		EA9A36602A9E3996005D1E0C /* HomeCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCore.swift; sourceTree = "<group>"; };
+		EA9A36632A9EC27E005D1E0C /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
+		EA9A36652A9EC305005D1E0C /* GeneralCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA9A36572A9E3678005D1E0C /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				EA9A363D2A9DFFA9005D1E0C /* App */,
+				EA9A364E2A9E3583005D1E0C /* Components */,
+				EA9A364C2A9E3583005D1E0C /* UI */,
 				EA0724E12893BE640013719B /* Preview Content */,
 			);
 			path = preSpeechRecognition;
@@ -140,7 +158,6 @@
 				EA9A36402A9DFFA9005D1E0C /* AppDelegate.swift */,
 				EA9A36492A9E03B8005D1E0C /* Scene */,
 				EA9A363E2A9DFFA9005D1E0C /* Assets.xcassets */,
-				EA9A363F2A9DFFA9005D1E0C /* preSpeechRecognitionApp.swift */,
 				EA9A36412A9DFFA9005D1E0C /* ContentView.swift */,
 				EA9A36422A9DFFA9005D1E0C /* Info.plist */,
 			);
@@ -151,8 +168,62 @@
 			isa = PBXGroup;
 			children = (
 				EA9A364A2A9E03DC005D1E0C /* SceneDelegate.swift */,
+				EA9A36582A9E36F4005D1E0C /* SceneCore.swift */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		EA9A364C2A9E3583005D1E0C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EA9A36522A9E359F005D1E0C /* Common */,
+				EA9A365A2A9E37D3005D1E0C /* Coordinator */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		EA9A364E2A9E3583005D1E0C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EA9A364F2A9E3583005D1E0C /* .gitkeep */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EA9A36522A9E359F005D1E0C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EA9A36532A9E35B3005D1E0C /* CustomHostingController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		EA9A365A2A9E37D3005D1E0C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				EA9A365F2A9E3985005D1E0C /* Home */,
+				EA9A36622A9EC270005D1E0C /* General */,
+				EA9A365B2A9E37EA005D1E0C /* HomeCoordinator.swift */,
+				EA9A365D2A9E3886005D1E0C /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		EA9A365F2A9E3985005D1E0C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EA9A36602A9E3996005D1E0C /* HomeCore.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EA9A36622A9EC270005D1E0C /* General */ = {
+			isa = PBXGroup;
+			children = (
+				EA9A36632A9EC27E005D1E0C /* GeneralView.swift */,
+				EA9A36652A9EC305005D1E0C /* GeneralCore.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +242,9 @@
 			dependencies = (
 			);
 			name = preSpeechRecognition;
+			packageProductDependencies = (
+				EA9A36562A9E3678005D1E0C /* ComposableArchitecture */,
+			);
 			productName = preSpeechRecognition;
 			productReference = EA0724D82893BE610013719B /* preSpeechRecognition.app */;
 			productType = "com.apple.product-type.application";
@@ -242,6 +316,9 @@
 				Base,
 			);
 			mainGroup = EA0724CF2893BE600013719B;
+			packageReferences = (
+				EA9A36552A9E3678005D1E0C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = EA0724D92893BE610013719B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -260,6 +337,7 @@
 			files = (
 				EA716EFF28C2F2EC00393BA0 /* README.md in Resources */,
 				EA0724E32893BE640013719B /* Preview Assets.xcassets in Resources */,
+				EA9A36512A9E3584005D1E0C /* .gitkeep in Resources */,
 				EA9A36432A9DFFA9005D1E0C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,9 +363,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA9A36442A9DFFA9005D1E0C /* preSpeechRecognitionApp.swift in Sources */,
+				EA9A365E2A9E3886005D1E0C /* Coordinator.swift in Sources */,
+				EA9A36542A9E35B3005D1E0C /* CustomHostingController.swift in Sources */,
+				EA9A36662A9EC305005D1E0C /* GeneralCore.swift in Sources */,
+				EA9A36592A9E36F4005D1E0C /* SceneCore.swift in Sources */,
+				EA9A36642A9EC27E005D1E0C /* GeneralView.swift in Sources */,
+				EA9A36612A9E3996005D1E0C /* HomeCore.swift in Sources */,
 				EA9A36462A9DFFA9005D1E0C /* ContentView.swift in Sources */,
 				EA9A36452A9DFFA9005D1E0C /* AppDelegate.swift in Sources */,
+				EA9A365C2A9E37EA005D1E0C /* HomeCoordinator.swift in Sources */,
 				EA9A364B2A9E03DC005D1E0C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,6 +692,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EA9A36552A9E3678005D1E0C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EA9A36562A9E3678005D1E0C /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA9A36552A9E3678005D1E0C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EA0724D02893BE600013719B /* Project object */;
 }
