@@ -11,17 +11,23 @@ import ComposableArchitecture
 struct Sandbox: Reducer {
     
     struct State: Equatable {
-        
+        var tagButtonStyleType: TagButtonText.StyleType = .notSelected
     }
     
     enum Action {
         case onAppear
+        case tagButtonTapped
     }
     
     func reduce(into state: inout State, action: Action) -> Effect<Action> {
         switch action {
         case .onAppear:
             return .none
+            
+        case .tagButtonTapped:
+            state.tagButtonStyleType = state.tagButtonStyleType.increment
+            return .none
+            
         }
     }
 }

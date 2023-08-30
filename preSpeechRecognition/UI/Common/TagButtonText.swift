@@ -30,11 +30,18 @@ struct TagButtonText: ViewModifier {
 
 // MARK: - CapsuleType
 extension TagButtonText {
-    enum StyleType {
-        case notSelected
-        case selected
-        case disabled
-        case enabled
+    enum StyleType: Int {
+        case notSelected = 0
+        case selected = 1
+        case disabled = 2
+        case enabled = 3
+        
+        // for test
+        var increment: Self {
+            let rawValue = self.rawValue + 1
+            guard rawValue <= StyleType.enabled.rawValue else { return .notSelected }
+            return .init(rawValue: rawValue) ?? .notSelected
+        }
         
         fileprivate var foregroundColor: Color {
             switch self {
@@ -55,9 +62,6 @@ extension TagButtonText {
                         style: .init(lineWidth: 2, dash: [4])
                     )
             case .selected:
-                Capsule(style: .circular)
-                    .fill(.gray.opacity(0.4))
-            case .disabled:
                 ZStack {
                     Capsule(style: .circular)
                         .stroke(
@@ -68,6 +72,9 @@ extension TagButtonText {
                     Capsule(style: .circular)
                         .fill(.purple)
                 }
+            case .disabled:
+                Capsule(style: .circular)
+                    .fill(.gray.opacity(0.4))
             case .enabled:
                 Capsule(style: .circular)
                     .fill(.purple)

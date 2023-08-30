@@ -26,34 +26,39 @@ struct SandboxView: View {
                 
                 // v1
                 Button {
-                    print("tag tapped.")
+                    viewStore.send(.tagButtonTapped)
+//                    print("tag tapped.")
                 } label: {
                     Text("延べ床面積")
-                        .tagButtonText(type: .notSelected)
+                        .tagButtonText(type: viewStore.tagButtonStyleType)
+                    
+//                    Text("延べ床面積")
+//                        .tagButtonText(type: .selected)
+
                 }
 
-                // v2
-                Button {
-                    print("tag tapped.")
-                } label: {
-                    Text("延べ床面積")
-                        .tagButtonText(type: .selected)
-                }
-                
-                Button {
-                    print("tag tapped.")
-                } label: {
-                    Text("延べ床面積")
-                        .tagButtonText(type: .disabled)
-                }
-                
-                // tag button (v4)
-                Button {
-                    print("tag tapped.")
-                } label: {
-                    Text("延べ床面積")
-                        .tagButtonText(type: .enabled)
-                }
+//                // v2
+//                Button {
+//                    print("tag tapped.")
+//                } label: {
+//                    Text("延べ床面積")
+//                        .tagButtonText(type: .selected)
+//                }
+//
+//                Button {
+//                    print("tag tapped.")
+//                } label: {
+//                    Text("延べ床面積")
+//                        .tagButtonText(type: .disabled)
+//                }
+//
+//                // tag button (v4)
+//                Button {
+//                    print("tag tapped.")
+//                } label: {
+//                    Text("延べ床面積")
+//                        .tagButtonText(type: .enabled)
+//                }
             }
             .onAppear {
                 // TODO:
