@@ -15,8 +15,45 @@ struct SandboxView: View {
     var body: some View {
         WithViewStore(store, observe: { $0 }) { viewStore in
             
-            VStack {
+            VStack(spacing: 40) {
                 Text("Sandbox")
+                
+                // MEMO:
+                // より正確にフォントサイズに応じてスケールさせたいのであれば @ScaledMetric に準拠したpadding、widthを用意する必要がありそう
+                // ref:
+                // https://developer.apple.com/tutorials/swiftui-concepts/scaling-views-to-complement-text
+                // https://irimasu.com/multiplatform-scaledmetric-environment-geometryproxy-swiftui
+                
+                // v1
+                Button {
+                    print("tag tapped.")
+                } label: {
+                    Text("延べ床面積")
+                        .tagButtonText(type: .notSelected)
+                }
+
+                // v2
+                Button {
+                    print("tag tapped.")
+                } label: {
+                    Text("延べ床面積")
+                        .tagButtonText(type: .selected)
+                }
+                
+                Button {
+                    print("tag tapped.")
+                } label: {
+                    Text("延べ床面積")
+                        .tagButtonText(type: .disabled)
+                }
+                
+                // tag button (v4)
+                Button {
+                    print("tag tapped.")
+                } label: {
+                    Text("延べ床面積")
+                        .tagButtonText(type: .enabled)
+                }
             }
             .onAppear {
                 // TODO:

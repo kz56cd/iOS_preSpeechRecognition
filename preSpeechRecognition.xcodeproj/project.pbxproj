@@ -10,6 +10,7 @@
 		EA0724E32893BE640013719B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA0724E22893BE640013719B /* Preview Assets.xcassets */; };
 		EA0724EE2893BE640013719B /* preSpeechRecognitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0724ED2893BE640013719B /* preSpeechRecognitionTests.swift */; };
 		EA0724F92893BE640013719B /* preSpeechRecognitionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0724F82893BE640013719B /* preSpeechRecognitionUITests.swift */; };
+		EA0B34172A9FCDC7001D52A3 /* TagButtonText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B34162A9FCDC7001D52A3 /* TagButtonText.swift */; };
 		EA716EFF28C2F2EC00393BA0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EA716EFE28C2F2EC00393BA0 /* README.md */; };
 		EA9A36432A9DFFA9005D1E0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA9A363E2A9DFFA9005D1E0C /* Assets.xcassets */; };
 		EA9A36452A9DFFA9005D1E0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A36402A9DFFA9005D1E0C /* AppDelegate.swift */; };
@@ -54,6 +55,7 @@
 		EA0724F42893BE640013719B /* preSpeechRecognitionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = preSpeechRecognitionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0724F82893BE640013719B /* preSpeechRecognitionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preSpeechRecognitionUITests.swift; sourceTree = "<group>"; };
 		EA0724FA2893BE640013719B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA0B34162A9FCDC7001D52A3 /* TagButtonText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagButtonText.swift; sourceTree = "<group>"; };
 		EA716EFE28C2F2EC00393BA0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EA9A363E2A9DFFA9005D1E0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA9A36402A9DFFA9005D1E0C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				EA9A36532A9E35B3005D1E0C /* CustomHostingController.swift */,
+				EA0B34162A9FCDC7001D52A3 /* TagButtonText.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				EA9A366B2A9ED5DC005D1E0C /* SandboxCore.swift in Sources */,
 				EA9A365E2A9E3886005D1E0C /* Coordinator.swift in Sources */,
 				EA9A36542A9E35B3005D1E0C /* CustomHostingController.swift in Sources */,
+				EA0B34172A9FCDC7001D52A3 /* TagButtonText.swift in Sources */,
 				EA9A36662A9EC305005D1E0C /* GeneralCore.swift in Sources */,
 				EA9A36592A9E36F4005D1E0C /* SceneCore.swift in Sources */,
 				EA9A36642A9EC27E005D1E0C /* GeneralView.swift in Sources */,
@@ -475,7 +479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -530,7 +534,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -550,7 +554,7 @@
 				DEVELOPMENT_TEAM = 3ZMTZ3U33V;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = preSpeechRecognition/App/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -572,7 +576,7 @@
 				DEVELOPMENT_TEAM = 3ZMTZ3U33V;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = preSpeechRecognition/App/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -592,7 +596,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ZMTZ3U33V;
 				INFOPLIST_FILE = preSpeechRecognitionTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -614,7 +618,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ZMTZ3U33V;
 				INFOPLIST_FILE = preSpeechRecognitionTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
