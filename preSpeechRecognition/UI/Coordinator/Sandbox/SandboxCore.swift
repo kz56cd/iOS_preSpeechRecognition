@@ -12,6 +12,19 @@ struct Sandbox: Reducer {
     
     struct State: Equatable {
         var tagButtonStyleType: TagButtonText.StyleType = .notSelected
+        
+        var tagButtonDescription: String {
+            tagButtonStyleType.text
+        }
+        
+        var isHiddenFloatingButton: Bool {
+            switch tagButtonStyleType {
+            case .selected:
+                return false
+            default:
+                return true
+            }
+        }
     }
     
     enum Action {

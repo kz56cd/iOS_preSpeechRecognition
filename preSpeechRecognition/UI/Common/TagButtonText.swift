@@ -43,6 +43,19 @@ extension TagButtonText {
             return .init(rawValue: rawValue) ?? .notSelected
         }
         
+        var text: String {
+            switch self {
+            case .notSelected:
+                return "notSelected"
+            case .selected:
+                return "selected"
+            case .disabled:
+                return "disabled"
+            case .enabled:
+                return "enabled"
+            }
+        }
+        
         fileprivate var foregroundColor: Color {
             switch self {
             case .notSelected:
