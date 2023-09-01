@@ -37,7 +37,9 @@ struct HomeCoordinatorReducer: Reducer {
                 return .none
                 
             case .showSandbox:
-                state.sandbox = Sandbox.State()
+                state.sandbox = Sandbox.State(
+                    items: [.init(name: "hoge", color: .cyan)]
+                )
                 
                 print("fuga")
                 

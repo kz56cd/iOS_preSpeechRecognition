@@ -12,6 +12,7 @@
 		EA0724F92893BE640013719B /* preSpeechRecognitionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0724F82893BE640013719B /* preSpeechRecognitionUITests.swift */; };
 		EA0B34172A9FCDC7001D52A3 /* TagButtonText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B34162A9FCDC7001D52A3 /* TagButtonText.swift */; };
 		EA716EFF28C2F2EC00393BA0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EA716EFE28C2F2EC00393BA0 /* README.md */; };
+		EA8C39132AA1AE9A00F26A25 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C39122AA1AE9A00F26A25 /* FlowLayout.swift */; };
 		EA9A36432A9DFFA9005D1E0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA9A363E2A9DFFA9005D1E0C /* Assets.xcassets */; };
 		EA9A36452A9DFFA9005D1E0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A36402A9DFFA9005D1E0C /* AppDelegate.swift */; };
 		EA9A36462A9DFFA9005D1E0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A36412A9DFFA9005D1E0C /* ContentView.swift */; };
@@ -57,6 +58,7 @@
 		EA0724FA2893BE640013719B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA0B34162A9FCDC7001D52A3 /* TagButtonText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagButtonText.swift; sourceTree = "<group>"; };
 		EA716EFE28C2F2EC00393BA0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EA8C39122AA1AE9A00F26A25 /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
 		EA9A363E2A9DFFA9005D1E0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA9A36402A9DFFA9005D1E0C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA9A36412A9DFFA9005D1E0C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				EA9A36532A9E35B3005D1E0C /* CustomHostingController.swift */,
 				EA0B34162A9FCDC7001D52A3 /* TagButtonText.swift */,
+				EA8C39122AA1AE9A00F26A25 /* FlowLayout.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				EA9A36542A9E35B3005D1E0C /* CustomHostingController.swift in Sources */,
 				EA0B34172A9FCDC7001D52A3 /* TagButtonText.swift in Sources */,
 				EA9A36662A9EC305005D1E0C /* GeneralCore.swift in Sources */,
+				EA8C39132AA1AE9A00F26A25 /* FlowLayout.swift in Sources */,
 				EA9A36592A9E36F4005D1E0C /* SceneCore.swift in Sources */,
 				EA9A36642A9EC27E005D1E0C /* GeneralView.swift in Sources */,
 				EA9A36612A9E3996005D1E0C /* HomeCore.swift in Sources */,

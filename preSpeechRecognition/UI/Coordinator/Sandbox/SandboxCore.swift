@@ -5,12 +5,19 @@
 //  Created by Masakazu Sano on 2023/08/30.
 //
 
-import Foundation
+import SwiftUI
 import ComposableArchitecture
 
 struct Sandbox: Reducer {
     
+    struct Item: Equatable {
+        let name: String
+        let color: Color
+    }
+    
     struct State: Equatable {
+        let items: [Item]
+        
         var tagButtonStyleType: TagButtonText.StyleType = .notSelected
         
         var tagButtonDescription: String {

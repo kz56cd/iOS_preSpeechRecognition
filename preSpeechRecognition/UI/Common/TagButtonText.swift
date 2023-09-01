@@ -8,22 +8,26 @@
 import SwiftUI
 
 extension View {
-    func tagButtonText(type: TagButtonText.StyleType) -> some View {
-        modifier(TagButtonText(type: type))
+    func tagButtonText(
+        type: TagButtonText.StyleType,
+        baseColor: Color
+    ) -> some View {
+        modifier(TagButtonText(type: type, baseColor: baseColor))
     }
 }
 
 // MARK: - TagButtonText
 struct TagButtonText: ViewModifier {
     let type: StyleType
+    let baseColor: Color
 
     func body(content: Content) -> some View {
         content
             .padding()
             .frame(height: 44)
-            .foregroundColor(type.foregroundColor)
+            .foregroundColor(type.foregroundColor(baseColor: baseColor))
             .background {
-                type.backgroundView
+                type.backgroundView(baseColor: baseColor)
             }
     }
 }
@@ -56,41 +60,41 @@ extension TagButtonText {
             }
         }
         
-        fileprivate var foregroundColor: Color {
+        func foregroundColor(baseColor: Color) -> Color {
             switch self {
             case .notSelected:
-                return .purple
+                return baseColor
             case .selected, .disabled, .enabled:
-                return .white
+                return Color.white
             }
         }
         
         @ViewBuilder
-        fileprivate var backgroundView: some View {
+        func backgroundView(baseColor: Color) -> some View {
             switch self {
             case .notSelected:
                 Capsule(style: .circular)
                     .stroke(
-                        .purple,
+                        baseColor,
                         style: .init(lineWidth: 2, dash: [4])
                     )
             case .selected:
                 ZStack {
                     Capsule(style: .circular)
                         .stroke(
-                            .purple.opacity(0.3),
+                            baseColor.opacity(0.3),
                             style: .init(lineWidth: 14)
                         )
                     
                     Capsule(style: .circular)
-                        .fill(.purple)
+                        .fill(baseColor)
                 }
             case .disabled:
                 Capsule(style: .circular)
                     .fill(.gray.opacity(0.4))
             case .enabled:
                 Capsule(style: .circular)
-                    .fill(.purple)
+                    .fill(baseColor)
             }
         }
     }
