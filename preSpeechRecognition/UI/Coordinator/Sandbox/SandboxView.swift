@@ -12,16 +12,12 @@ struct SandboxView: View {
     
     let store: StoreOf<Sandbox>
     
-//    private let items = ["Some long item here", "And then some longer one",
-//                 "Short", "Items", "Here", "And", "A", "Few", "More",
-//                 "And then a very very very long long long long long long long long longlong long long long long long longlong long long long long long longlong long long long long long longlong long long long long long longlong long long long long long long long one", "and", "then", "some", "short short short ones"]
-    
     var body: some View {
         WithViewStore(store, observe: { $0 }) { viewStore in
             
             FlowLayout(
                 mode: .scrollable,
-                items: viewStore.items
+                items: viewStore.items.map { $0 }
             ) { item in
                 Button {
                     viewStore.send(.tagButtonTapped)
@@ -41,7 +37,7 @@ struct SandboxView: View {
 // MARK: - PreviewProvider
 struct SandboxView_Previews: PreviewProvider {
     
-    static let items: [Sandbox.Item] = [.init(name: "hoge", color: .red)]
+    static let items: IdentifiedArrayOf<Sandbox.Item> = [.init(id: .init(), name: "hoge", color: .red)]
     
     static let store = Store(initialState: Sandbox.State(items: items)) {
         Sandbox()

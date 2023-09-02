@@ -9,14 +9,10 @@ import SwiftUI
 import ComposableArchitecture
 
 struct Sandbox: Reducer {
-    
-    struct Item: Equatable {
-        let name: String
-        let color: Color
-    }
+    typealias Item = TagButtonReducer.State
     
     struct State: Equatable {
-        let items: [Item]
+        let items: IdentifiedArrayOf<Item>
         
         var tagButtonStyleType: TagButtonText.StyleType = .notSelected
         
@@ -49,5 +45,23 @@ struct Sandbox: Reducer {
             return .none
             
         }
+    }
+}
+
+// TODO: replace correct file
+struct TagButtonReducer: Reducer {
+    
+    struct Item: Equatable {}
+    
+    struct State: Equatable, Identifiable {
+        let id: UUID
+        let name: String
+        let color: Color
+    }
+    
+    enum Action {}
+    
+    func reduce(into state: inout State, action: Action) -> Effect<Action> {
+        
     }
 }
