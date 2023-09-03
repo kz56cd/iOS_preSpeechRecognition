@@ -15,21 +15,24 @@ struct SandboxView: View {
     var body: some View {
         WithViewStore(store, observe: { $0 }) { viewStore in
             
-            FlowLayout(
-                mode: .scrollable,
-                items: viewStore.items.map { $0 }
-            ) { item in
-                Button {
-                    viewStore.send(.tagButtonTapped)
-                } label: {
-                    Text(item.name)
-                        .tagButtonText(
-                            type: viewStore.tagButtonStyleType,
-                            baseColor: item.color
-                        )
-                }
+            Group {
+                FlowLayout(
+                    mode: .scrollable,
+                    items: viewStore.items.map { $0 }
+                ) { item in
+                    Button {
+                        viewStore.send(.tagButtonTapped)
+                    } label: {
+                        Text(item.name)
+                            .tagButtonText(
+                                type: viewStore.tagButtonStyleType,
+                                baseColor: item.color
+                            )
+                    }
 
+                }
             }
+            .padding()
         }
     }
 }
@@ -37,7 +40,9 @@ struct SandboxView: View {
 // MARK: - PreviewProvider
 struct SandboxView_Previews: PreviewProvider {
     
-    static let items: IdentifiedArrayOf<Sandbox.Item> = [.init(id: .init(), name: "hoge", color: .red)]
+    static let items: IdentifiedArrayOf<Sandbox.Item> = [
+        .init(id: .init(), name: "hoge", color: .red)
+    ]
     
     static let store = Store(initialState: Sandbox.State(items: items)) {
         Sandbox()
