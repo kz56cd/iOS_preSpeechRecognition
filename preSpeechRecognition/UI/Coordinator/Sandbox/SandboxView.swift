@@ -15,6 +15,8 @@ struct SandboxView: View {
     var body: some View {
         WithViewStore(store, observe: { $0 }) { viewStore in
             
+            // use 'ForEachStore' ?
+            
             Group {
                 FlowLayout(
                     mode: .scrollable,
