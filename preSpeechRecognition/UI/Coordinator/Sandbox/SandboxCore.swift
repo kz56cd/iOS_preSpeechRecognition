@@ -9,10 +9,41 @@ import SwiftUI
 import ComposableArchitecture
 
 struct Sandbox: Reducer {
+//    typealias Item = TagButtonReducer
     typealias Item = TagButtonReducer.State
     
     struct State: Equatable {
         let items: IdentifiedArrayOf<Item>
+    }
+    
+    enum Action {
+        case onAppear
+        
+        case tagButton(id: TagButtonReducer.State.ID, action: TagButtonReducer.Action)
+    }
+    
+    func reduce(into state: inout State, action: Action) -> Effect<Action> {
+        switch action {
+        case .onAppear:
+            return .none
+        case let .tagButton(id, action):
+            return .none // TODO: implement
+        }
+    }
+}
+
+// TODO: replace correct file
+//struct TagButtonReducer: Reducer, Identifiable {
+//    let id = UUID()
+
+struct TagButtonReducer: Reducer {
+    
+    struct Item: Equatable {}
+    
+    struct State: Equatable, Identifiable {
+        let id: UUID
+        let name: String
+        let color: Color
         
         var tagButtonStyleType: TagButtonText.StyleType = .notSelected
         
@@ -31,37 +62,14 @@ struct Sandbox: Reducer {
     }
     
     enum Action {
-        case onAppear
         case tagButtonTapped
     }
     
     func reduce(into state: inout State, action: Action) -> Effect<Action> {
         switch action {
-        case .onAppear:
-            return .none
-            
-        case .tagButtonTapped:
-            state.tagButtonStyleType = state.tagButtonStyleType.increment
-            return .none
-            
+            case .tagButtonTapped:
+                state.tagButtonStyleType = state.tagButtonStyleType.increment
+                return .none
         }
-    }
-}
-
-// TODO: replace correct file
-struct TagButtonReducer: Reducer {
-    
-    struct Item: Equatable {}
-    
-    struct State: Equatable, Identifiable {
-        let id: UUID
-        let name: String
-        let color: Color
-    }
-    
-    enum Action {}
-    
-    func reduce(into state: inout State, action: Action) -> Effect<Action> {
-        
     }
 }

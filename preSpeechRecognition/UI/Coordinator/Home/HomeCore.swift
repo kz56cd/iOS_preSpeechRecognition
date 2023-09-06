@@ -38,10 +38,13 @@ struct HomeCoordinatorReducer: Reducer {
                 
             case .showSandbox:
                 state.sandbox = Sandbox.State(
-                    items: [.init(id: .init(), name: "hoge", color: .cyan)]
+                    items: [
+                        .init(id: .init(), name: "hoge", color: .red),
+                        .init(id: .init(), name: "fuga", color: .blue),
+                        .init(id: .init(), name: "moga", color: .cyan),
+                        .init(id: .init(), name: "foo", color: .yellow)
+                    ]
                 )
-                
-                print("fuga")
                 
                 return .none
                 
