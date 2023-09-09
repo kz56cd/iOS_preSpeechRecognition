@@ -66,22 +66,3 @@ struct SandboxView_Previews: PreviewProvider {
         SandboxView(store: store)
     }
 }
-
-struct TagButtonView: View {
-    
-    let store: StoreOf<TagButtonReducer>
-    
-    var body: some View {
-        WithViewStore(store, observe: { $0 }) { viewStore in
-            Button {
-                viewStore.send(.tagButtonTapped)
-            } label: {
-                Text(viewStore.name)
-                    .tagButtonText(
-                        type: viewStore.tagButtonStyleType,
-                        baseColor: viewStore.color
-                    )
-            }
-        }
-    }
-}
