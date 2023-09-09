@@ -11,6 +11,7 @@
 		EA0724EE2893BE640013719B /* preSpeechRecognitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0724ED2893BE640013719B /* preSpeechRecognitionTests.swift */; };
 		EA0724F92893BE640013719B /* preSpeechRecognitionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0724F82893BE640013719B /* preSpeechRecognitionUITests.swift */; };
 		EA0B34172A9FCDC7001D52A3 /* TagButtonText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0B34162A9FCDC7001D52A3 /* TagButtonText.swift */; };
+		EA440AEC2AACA5A9002D8558 /* TagButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA440AEB2AACA5A9002D8558 /* TagButtonView.swift */; };
 		EA716EFF28C2F2EC00393BA0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EA716EFE28C2F2EC00393BA0 /* README.md */; };
 		EA8C39132AA1AE9A00F26A25 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C39122AA1AE9A00F26A25 /* FlowLayout.swift */; };
 		EA9A36432A9DFFA9005D1E0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA9A363E2A9DFFA9005D1E0C /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		EA0724F82893BE640013719B /* preSpeechRecognitionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preSpeechRecognitionUITests.swift; sourceTree = "<group>"; };
 		EA0724FA2893BE640013719B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA0B34162A9FCDC7001D52A3 /* TagButtonText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagButtonText.swift; sourceTree = "<group>"; };
+		EA440AEB2AACA5A9002D8558 /* TagButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagButtonView.swift; sourceTree = "<group>"; };
 		EA716EFE28C2F2EC00393BA0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EA8C39122AA1AE9A00F26A25 /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
 		EA9A363E2A9DFFA9005D1E0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -160,6 +162,14 @@
 			path = preSpeechRecognitionUITests;
 			sourceTree = "<group>";
 		};
+		EA440AEA2AACA56B002D8558 /* TagButton */ = {
+			isa = PBXGroup;
+			children = (
+				EA440AEB2AACA5A9002D8558 /* TagButtonView.swift */,
+			);
+			path = TagButton;
+			sourceTree = "<group>";
+		};
 		EA9A363D2A9DFFA9005D1E0C /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,11 +221,12 @@
 		EA9A365A2A9E37D3005D1E0C /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				EA9A365B2A9E37EA005D1E0C /* HomeCoordinator.swift */,
+				EA9A365D2A9E3886005D1E0C /* Coordinator.swift */,
 				EA9A365F2A9E3985005D1E0C /* Home */,
 				EA9A36622A9EC270005D1E0C /* General */,
 				EA9A36672A9ED4FD005D1E0C /* Sandbox */,
-				EA9A365B2A9E37EA005D1E0C /* HomeCoordinator.swift */,
-				EA9A365D2A9E3886005D1E0C /* Coordinator.swift */,
+				EA440AEA2AACA56B002D8558 /* TagButton */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -391,6 +402,7 @@
 				EA8C39132AA1AE9A00F26A25 /* FlowLayout.swift in Sources */,
 				EA9A36592A9E36F4005D1E0C /* SceneCore.swift in Sources */,
 				EA9A36642A9EC27E005D1E0C /* GeneralView.swift in Sources */,
+				EA440AEC2AACA5A9002D8558 /* TagButtonView.swift in Sources */,
 				EA9A36612A9E3996005D1E0C /* HomeCore.swift in Sources */,
 				EA9A36462A9DFFA9005D1E0C /* ContentView.swift in Sources */,
 				EA9A36452A9DFFA9005D1E0C /* AppDelegate.swift in Sources */,
