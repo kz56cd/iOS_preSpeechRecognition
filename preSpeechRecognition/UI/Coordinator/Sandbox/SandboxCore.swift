@@ -9,11 +9,10 @@ import SwiftUI
 import ComposableArchitecture
 
 struct Sandbox: Reducer {
-//    typealias Item = TagButtonReducer
     typealias Item = TagButtonReducer.State
     
     struct State: Equatable {
-        let items: IdentifiedArrayOf<Item>
+        var items: IdentifiedArrayOf<Item> = []
     }
     
     enum Action {
@@ -22,20 +21,22 @@ struct Sandbox: Reducer {
         case tagButton(id: TagButtonReducer.State.ID, action: TagButtonReducer.Action)
     }
     
-    func reduce(into state: inout State, action: Action) -> Effect<Action> {
-        switch action {
-        case .onAppear:
-            return .none
-        case let .tagButton(id, action):
-            return .none // TODO: implement
+    var body: some Reducer<State, Action> {
+        Reduce { state, action in
+            switch action {
+            case .onAppear:
+                return .none
+            case let .tagButton(id, action):
+                return .none // TODO: implement
+            }
+        }
+        .forEach(\.items, action: /Action.tagButton) {
+            TagButtonReducer()
         }
     }
 }
 
 // TODO: replace correct file
-//struct TagButtonReducer: Reducer, Identifiable {
-//    let id = UUID()
-
 struct TagButtonReducer: Reducer {
     
     struct Item: Equatable {}
@@ -65,11 +66,15 @@ struct TagButtonReducer: Reducer {
         case tagButtonTapped
     }
     
-    func reduce(into state: inout State, action: Action) -> Effect<Action> {
-        switch action {
+    var body: some Reducer<State, Action> {
+        Reduce { state, action in
+            switch action {
             case .tagButtonTapped:
                 state.tagButtonStyleType = state.tagButtonStyleType.increment
+                print("state.tagButtonStyleType: ", state.tagButtonStyleType)
                 return .none
+                
+            }
         }
     }
 }

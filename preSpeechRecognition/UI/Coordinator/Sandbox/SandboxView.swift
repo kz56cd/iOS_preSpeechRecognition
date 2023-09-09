@@ -21,18 +21,8 @@ struct SandboxView: View {
                         state: \.items,
                         action: Sandbox.Action.tagButton(id: action: )
                     )
-                ) { store in
-                    WithViewStore(store, observe: { $0 }) { viewStore in
-                            Button {
-                                viewStore.send(.tagButtonTapped)
-                            } label: {
-                                Text(viewStore.name)
-                                    .tagButtonText(
-                                        type: viewStore.tagButtonStyleType,
-                                        baseColor: viewStore.color
-                                    )
-                            }
-                    }
+                ) { childStore in
+                    TagButtonView(store: childStore)
                 }
             }
 
@@ -74,5 +64,24 @@ struct SandboxView_Previews: PreviewProvider {
     
     static var previews: some View {
         SandboxView(store: store)
+    }
+}
+
+struct TagButtonView: View {
+    
+    let store: StoreOf<TagButtonReducer>
+    
+    var body: some View {
+        WithViewStore(store, observe: { $0 }) { viewStore in
+            Button {
+                viewStore.send(.tagButtonTapped)
+            } label: {
+                Text(viewStore.name)
+                    .tagButtonText(
+                        type: viewStore.tagButtonStyleType,
+                        baseColor: viewStore.color
+                    )
+            }
+        }
     }
 }
