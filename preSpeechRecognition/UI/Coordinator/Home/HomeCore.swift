@@ -29,7 +29,16 @@ struct HomeCoordinatorReducer: Reducer {
         Reduce { state, action in
             // handling transition actions
             switch action {
-                // WIP
+                
+            case .general(.onAppear):
+                // NOTE:
+                // 作業中の画面を即時表示したいときは下記コードを実行
+                return .run { send in
+                    await send(.showSandbox)
+                }
+                
+//                return .none
+                
             case .general(.sandboxTapped):
                 return .send(.showSandbox)
                 

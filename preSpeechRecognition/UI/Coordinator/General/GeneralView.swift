@@ -22,7 +22,7 @@ struct GeneralView: View {
     @State private var isShowAlert = false
 
     /// 音声認識により文字起こししたテキスト
-    @State private var speachText = "-"
+    @State private var speechText = "-"
     
     // MARK: - for Speech
     private let speechRecgnizer = SFSpeechRecognizer(locale: .init(identifier: "ja_JP"))!
@@ -33,59 +33,63 @@ struct GeneralView: View {
     var body: some View {
         WithViewStore(store, observe: { $0 }) { viewStore in
             
-            VStack {
-                Spacer()
-                Text(speachText)
-                Spacer()
-                
-                VStack(spacing: 14) {
-                    Button {
-                        viewStore.send(.sandboxTapped)
-                    } label: {
-                        Text("(sandbox)")
-                            .font(.largeTitle)
-                            .foregroundColor(button01Color)
-                    }
+            NavigationStack {
+                VStack {
+                    Spacer()
+                    Text(speechText)
+                    Spacer()
                     
-                    // 録音スタートボタン
-                    Button(
-                        action: {
-                            button01Text = "recording..."
-                            button01Color = .red
-                            do {
-                                try startLiveTranscription()
-                            } catch {
-                                isShowAlert = true
-                            }
-                        },
-                        label: {
-                            Text(button01Text)
+                    VStack(spacing: 14) {
+                        Button {
+                            viewStore.send(.sandboxTapped)
+                        } label: {
+                            Text("(sandbox)")
                                 .font(.largeTitle)
                                 .foregroundColor(button01Color)
                         }
-                    ).alert(isPresented: $isShowAlert) {
-                        isShowAlert = false
-                        return cannotLiveTranscriptionAlert
-                    }
-                    
-                    // 録音ストップボタン
-                    Button(
-                        action: {
-                            button01Text = "record"
-                            button01Color = .blue
-                            self.stopLiveTranscription()
-                        },
-                        label: {
-                            Text(button02Text)
-                                .font(.largeTitle)
-                                .foregroundColor(button02Color)
+                        
+                        // 録音スタートボタン
+                        Button(
+                            action: {
+                                button01Text = "recording..."
+                                button01Color = .red
+                                do {
+                                    try startLiveTranscription()
+                                } catch {
+                                    isShowAlert = true
+                                }
+                            },
+                            label: {
+                                Text(button01Text)
+                                    .font(.largeTitle)
+                                    .foregroundColor(button01Color)
+                            }
+                        ).alert(isPresented: $isShowAlert) {
+                            isShowAlert = false
+                            return cannotLiveTranscriptionAlert
                         }
-                    )
+                        
+                        // 録音ストップボタン
+                        Button(
+                            action: {
+                                button01Text = "record"
+                                button01Color = .blue
+                                self.stopLiveTranscription()
+                            },
+                            label: {
+                                Text(button02Text)
+                                    .font(.largeTitle)
+                                    .foregroundColor(button02Color)
+                            }
+                        )
+                    }
                 }
             }
             .onAppear {
                 SFSpeechRecognizer.requestAuthorization { authorizeSpeechRecognizer(with: $0) }
+                viewStore.send(.onAppear)
             }
+
         }
     }
 }
@@ -98,7 +102,7 @@ extension GeneralView {
             recognitionTask.cancel()
             self.recognitionTask = nil
         }
-        speachText = "-"
+        speechText = "-"
         
         recognitionReq = SFSpeechAudioBufferRecognitionRequest()
         guard let recognitionReq = recognitionReq else { return }
@@ -131,13 +135,13 @@ extension GeneralView {
                     return
                 }
                 DispatchQueue.main.async {
-                    if !speachText.isEmpty {}
+                    if !speechText.isEmpty {}
                     
                     // NOTE: formattedStringは翻訳文をひとまとめにして返却する（単語ごとに分かれてはいない）
-                    // speachText = result?.bestTranscription.formattedString ?? "<<< Fail to transcription >>>"
+                    // speechText = result?.bestTranscription.formattedString ?? "<<< Fail to transcription >>>"
                     
                     // NOTE: 単語ごとに分かれて対応したい場合、segmentを使う
-                    speachText = result?.bestTranscription.segments
+                    speechText = result?.bestTranscription.segments
                         .map { $0.substring }
                         .joined(separator: "\n") ?? "<<< Fail to transcription >>>"
                 }
