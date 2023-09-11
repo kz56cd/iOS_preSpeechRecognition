@@ -25,7 +25,7 @@ struct GeneralView: View {
     @State private var speechText = "-"
     
     // MARK: - for Speech
-    private let speechRecgnizer = SFSpeechRecognizer(locale: .init(identifier: "ja_JP"))!
+    private let speechRecognizer = SFSpeechRecognizer(locale: .init(identifier: "ja_JP"))!
     private let audioEngine = AVAudioEngine()
     @State private var recognitionReq: SFSpeechAudioBufferRecognitionRequest?
     @State private var recognitionTask: SFSpeechRecognitionTask?
@@ -127,7 +127,7 @@ extension GeneralView {
         audioEngine.prepare()
         try audioEngine.start()
         
-        recognitionTask = speechRecgnizer.recognitionTask(
+        recognitionTask = speechRecognizer.recognitionTask(
             with: recognitionReq,
             resultHandler: { result, error in
                 if let error = error {
