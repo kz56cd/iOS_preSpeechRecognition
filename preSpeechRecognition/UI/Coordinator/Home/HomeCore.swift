@@ -57,9 +57,6 @@ struct HomeCoordinatorReducer: Reducer {
                 
                 return .none
                 
-            default:
-                return .none
-                
             }
         }
         .ifLet(\.sandbox, action: /Action.sandbox) {

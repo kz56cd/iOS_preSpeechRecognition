@@ -13,39 +13,63 @@ struct SandboxView: View {
     let store: StoreOf<Sandbox>
     
     var body: some View {
-        WithViewStore(store, observe: { $0 }) { viewStore in
+        
+        // NOTE: なぜか中央表示できない
+        VStack {
+            Spacer()
             
-            List {
-                ForEachStore(
-                    store.scope(
-                        state: \.items,
-                        action: Sandbox.Action.tagButton(id: action: )
-                    )
-                ) { childStore in
-                    TagButtonView(store: childStore)
+            WithViewStore(store, observe: { $0 }) { viewStore in
+                
+                    
+                List {
+                    
+                    ForEachStore(
+                        store.scope(
+                            state: \.items,
+                            action: Sandbox.Action.tagButton(id: action: )
+                        )
+                    ) { childStore in
+                        
+                        HStack {
+                            Spacer()
+                            
+                            TagButtonView(store: childStore)
+                        
+                            Spacer()
+                        }
+                        
+                    }
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    
                 }
-            }
+                
 
-            // use FlowLayout
-//            Group {
-//                FlowLayout(
-//                    mode: .scrollable,
-//                    items: viewStore.items.map { $0 }
-//                ) { item in
-//                    Button {
-////                        item.send(.tagButtonTapped)
-//                    } label: {
-//                        Text(item.name)
-//                            .tagButtonText(
-//                                type: viewStore.tagButtonStyleType,
-//                                baseColor: item.color
-//                            )
-//                    }
-//
-//                }
-//            }
-//            .padding()
+                // use FlowLayout
+    //            Group {
+    //                FlowLayout(
+    //                    mode: .scrollable,
+    //                    items: viewStore.items.map { $0 }
+    //                ) { item in
+    //                    Button {
+    ////                        item.send(.tagButtonTapped)
+    //                    } label: {
+    //                        Text(item.name)
+    //                            .tagButtonText(
+    //                                type: viewStore.tagButtonStyleType,
+    //                                baseColor: item.color
+    //                            )
+    //                    }
+    //
+    //                }
+    //            }
+    //            .padding()
+            }
+            
+            Spacer()
+    
         }
+        
     }
 }
     
